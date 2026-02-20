@@ -30,8 +30,8 @@ export interface OptimizerConfig {
   /** Optional custom tokenizer. Falls back to a heuristic estimator. */
   tokenizer?: Tokenizer;
   /**
-   * Custom pricing for cost estimation. Overrides the built-in pricing table.
-   * Useful for fine-tuned models, private deployments, or when prices change.
+   * Pricing for input cost estimation. When provided, `result.stats.estimatedCost`
+   * will contain a per-call cost estimate. Without this, `estimatedCost` is undefined.
    */
   pricing?: {
     /** Cost in USD per 1 million input tokens. */
